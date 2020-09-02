@@ -1,0 +1,145 @@
+body {
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Domine", serif;
+}
+
+#root {
+    padding: 1em;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+form {
+    font-size: 16px;
+}
+
+form * {
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__item>* {
+    align-self: flex-start;
+}
+
+.form__label {
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.form__input {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 425px;
+    min-height: calc(0.9em + (0.8em * 2) + 0.6em);
+    padding: 0.8em;
+    font-size: 0.9em;
+    outline: none;
+    border: 1px solid #ddd;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.form__input:focus {
+    background: #fff;
+}
+
+.form__input::placeholder {
+    color: #bbb;
+}
+
+.form__btn {
+    font-weight: 400;
+    font-size: 1.1em;
+    padding: 10px 16px;
+    margin: 10px 0;
+    color: #fff;
+    background: #14b64a;
+    border: 2px solid #0fa942;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.form__item.row {
+    flex-direction: row;
+}
+
+.form__item.row>*:not(:first-child) {
+    margin-left: 1em;
+}
+
+.error {
+    color: #d50000;
+    background: #fff8f8;
+    border-color: #d50000;
+}
+
+.form__input--error {
+    border-color: #d50000;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #ddd;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:hover {
+    font-weight: bold;
+    color: #ddd;
+    background: black;
+    cursor: pointer;
+}
+
+#averageContainer {
+    visibility: hidden;
+    border: 1px solid black;
+    padding: 10px 25px;
+    width: 400px;
+}
+
+canvas {
+    display: block;
+    height: 70%;
+    width: 70%;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="root">
+        <h1>Weather Statistics</h1>
+        <p>
+            Given a set of temperatures over a period of time, for example 1 year, Design a web page that will do the following
+
+            <ul>
+                <li><strong>Tuesday assignment</strong></li>
+
+                <ul>
+                    <li>Add a temperature to an array called weather</li>
+                </ul>
+                <li><strong>Wednesday Assignment</strong></li>
+                <ul>
+
+
+                    <li>Calculate the highest temperature</li>
+                    <li>Calculate the lowest temperature</li>
+                    <li>Calculate the yearly average temperate</li>
+                    <li>Visualize data</li>
+                </ul>
+            </ul>
+        </p>
+
+        <form action="">
+            <div class="form__item">
+                <label class="form__label" for="temperature">
+                    Temperature
+                </label>
+                <input class="form__input" type="number" name="temperature" id="temperature" placeholder="Temperature (Centigrade)">
+            </div>
+            <div class="form__item">
+                <label class="form__label" for="date">Date</label>
+                <input type="date" id="date" class="form__input">
+            </div>
+
+            <div class="form__item row">
+                <button class="form__btn" id="add">Add Record</button>
+                <button class="form__btn" id="average">Calculate Average</button>
+                <button class="form__btn" id="maxTemp">Get Max</button>
+                <button class="form__btn" id="minTemp">Get Min</button>
+                <button class="form__btn" id="seed">Seed Data</button>
+            </div>
+        </form>
+
+
+        <div id="results"></div>
+
+        <table id="resultsTable"></table>
+
+        <canvas id="myChart"></canvas>
+    </div>
+    <!--
+        Problem - Day one
+        - Given a set of temperatures over a period of time, for example 1 year, Design a web page that 
+        will do the following
+
+        - Allow us to input the temperature in Centigrade and a date (for simplication, we shall only store 1 temperature per month)
+        - (Solution provided by the teacher) Provide a button that will calculate the average temperature over the year
+        - Students will design the solution below
+            - Provide a button that will calculate the highest temperature of the year 
+            - Provide a button that will calculate the lowest temperature of the year
+
+        - Data visualization
+            - A table will be used to visual the data
+            - You may add some charting visualation if you want (you can use a simple library like chartjs)
+        Caveats
+        - Do not use existing libraries to do the following 
+            - sorting
+            - getting max values
+            - Getting min values
+     -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
