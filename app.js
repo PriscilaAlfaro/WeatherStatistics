@@ -17,9 +17,16 @@ let myLineChart;
 //-------------------UTILS--------------------//
 
 function sortData() {
-    return weather.sort((a, b) => {
-        return a.date - b.date;
-    });
+    for (let i = 0; i < weather.length; i++) {
+        for (let j = 0; j < weather.length; j++) {
+            if (weather[j] > weather[j + 1]) {
+                let hold = weather[j];
+                weather[j] = weather[j + 1];
+                weather[j + 1] = hold;
+            }
+        }
+        return weather;
+    }
 }
 
 function showDataResults(message, style) {
@@ -146,7 +153,10 @@ getMaxButton.addEventListener("click", function(e) {
     if (tempArray.length < 1) {
         showDataResults("Add Record or Seed Data first", "fail");
     } else {
-        let max = Math.max(...tempArray);
+        let max = tempArray[0];
+        for (let i = 1; i < tempArray.length; i++) {
+            max = tempArray[i] > max ? tempArray[i] : max;
+        }
         showDataResults(`Maximun temperature is ${max}`);
     }
 });
@@ -160,7 +170,11 @@ getMinButton.addEventListener("click", function(e) {
     if (tempArray.length < 1) {
         showDataResults("Add Record or Seed Data first", "fail");
     } else {
-        let min = Math.min(...tempArray);
+        let min = tempArray[0];
+        for (let i = 1; i < tempArray.length; i++) {
+            min = tempArray[i] < min ? tempArray[i] : min;
+        }
+
         showDataResults(`Minimum temperature is ${min}`);
     }
 });
