@@ -16,17 +16,17 @@ let myLineChart;
 
 //-------------------UTILS--------------------//
 
-function sortData() {
+function sortData(sortBy) {
     for (let i = 0; i < weather.length; i++) {
-        for (let j = 0; j < weather.length; j++) {
-            if (weather[j] > weather[j + 1]) {
+        for (let j = 0; j < weather.length - 1 - i; j++) {
+            if (weather[j][sortBy] > weather[j + 1][sortBy]) {
                 let hold = weather[j];
                 weather[j] = weather[j + 1];
                 weather[j + 1] = hold;
             }
         }
-        return weather;
     }
+    return weather;
 }
 
 function showDataResults(message, style) {
@@ -60,7 +60,7 @@ function formatDate(date) {
 }
 
 function refreshAllData() {
-    sortData();
+    sortData("date");
     populateTable();
     populateChart();
 }
@@ -91,7 +91,6 @@ function generateRandomObjects() {
     for (let i = 0; i < 10; i++) {
         weatherArr.push({ date: generateRandomDate(), temp: generateRandomTemp() });
     }
-    sortData();
     return weatherArr;
 }
 
@@ -146,36 +145,23 @@ addRecordButton.addEventListener("click", function(e) {
 //Calculate max temperature with Get Max Button
 getMaxButton.addEventListener("click", function(e) {
     e.preventDefault();
-
-    let tempArray = weather.map((item) => {
-        return item.temp;
-    });
-    if (tempArray.length < 1) {
+    if (weather.length < 1) {
         showDataResults("Add Record or Seed Data first", "fail");
     } else {
-        let max = tempArray[0];
-        for (let i = 1; i < tempArray.length; i++) {
-            max = tempArray[i] > max ? tempArray[i] : max;
-        }
-        showDataResults(`Maximun temperature is ${max}`);
+        let max = sortData("temp");
+        showDataResults(`Maximun temperature is ${max[max.length - 1].temp}`);
     }
 });
 
 //Calculate min temperature with Get Min Button
 getMinButton.addEventListener("click", function(e) {
     e.preventDefault();
-    let tempArray = weather.map((item) => {
-        return item.temp;
-    });
-    if (tempArray.length < 1) {
+
+    if (weather.length < 1) {
         showDataResults("Add Record or Seed Data first", "fail");
     } else {
-        let min = tempArray[0];
-        for (let i = 1; i < tempArray.length; i++) {
-            min = tempArray[i] < min ? tempArray[i] : min;
-        }
-
-        showDataResults(`Minimum temperature is ${min}`);
+        let min = sortData("temp");
+        showDataResults(`Minimum temperature is ${min[0].temp}`);
     }
 });
 
