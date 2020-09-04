@@ -9,7 +9,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
     font-family: "Domine", serif;
 }
 
@@ -77,6 +78,11 @@ form * {
     outline: none;
 }
 
+#clear {
+    background: #b64f14;
+    border: 2px solid #772809;
+}
+
 .form__item.row {
     flex-direction: row;
 }
@@ -138,8 +144,27 @@ table tbody tr:hover {
     width: 400px;
 }
 
+#red-msn-date,
+#red-msn-temp {
+    font-size: 70%;
+    color: rgb(211, 9, 9);
+    padding: 0px;
+    margin: 0px;
+}
+
+#canvas {
+    display: block;
+    height: 85%;
+    width: 85%;
+}
+
 canvas {
     display: block;
     height: 70%;
     width: 70%;
+}
+
+.fail {
+    color: rgb(211, 9, 9);
+    font-size: 90%;
 }

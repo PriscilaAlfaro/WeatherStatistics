@@ -41,10 +41,12 @@
                     Temperature
                 </label>
                 <input class="form__input" type="number" name="temperature" id="temperature" placeholder="Temperature (Centigrade)">
+                <p id="red-msn-temp"></p>
             </div>
             <div class="form__item">
                 <label class="form__label" for="date">Date</label>
                 <input type="date" id="date" class="form__input">
+                <p id="red-msn-date"></p>
             </div>
 
             <div class="form__item row">
@@ -53,7 +55,9 @@
                 <button class="form__btn" id="maxTemp">Get Max</button>
                 <button class="form__btn" id="minTemp">Get Min</button>
                 <button class="form__btn" id="seed">Seed Data</button>
+
             </div>
+            <div id="results"></div>
         </form>
 
 
@@ -61,7 +65,7 @@
 
         <table id="resultsTable"></table>
 
-        <canvas id="myChart"></canvas>
+        <div id="canvas"> <canvas id="myChart"></canvas></div>
     </div>
     <!--
         Problem - Day one
